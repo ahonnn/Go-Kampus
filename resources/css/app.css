@@ -14,6 +14,23 @@
 .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
 }
+
+.bg-dashboard{
+    background-color: #44231a;
+}
+
+.font-header{
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    font-size: 40px;
+    line-height: 1;
+}
+
+.font-sub{
+    font-weight: 400;
+    font-size: 15px;
+}
+
 .custom-scrollbar::-webkit-scrollbar-track {
     background: #18181b; /* zinc-900 */
     border-radius: 4px;

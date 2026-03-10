@@ -18,11 +18,24 @@ class DashboardController extends Controller
         $today = Carbon::now()->translatedFormat('l');
 
         // 1. STATISTIK UTAMA
-        $totalSks = Subject::where('user_id', $userId)->sum('sks');
+        // $totalSks = Subject::where('user_id', $userId)->sum('sks');
+
+        $pendingTasks = Task::where('user_id', $userId)
+                    ->where('status', 'panding') 
+                    ->count();
+
+        $inProgressTask = Task::where('user_id', $userId)
+                    ->where('status', 'in_progress')
+                    ->count();
+
+
+
         $totalSubjects = Subject::where('user_id', $userId)->count();
         
         $totalTasks = Task::where('user_id', $userId)->count();
         $completedTasks = Task::where('user_id', $userId)->where('status', 'Completed')->count();
+
+        $pendingTasks = $totalTasks - $completedTasks;
         // Hindari division by zero
         $taskProgress = $totalTasks > 0 ? round(($completedTasks / $totalTasks) * 100) : 0;
 
@@ -53,7 +66,7 @@ class DashboardController extends Controller
             ->get();
 
         return view('dashboard', compact(
-            'totalSks', 'totalSubjects', 'taskProgress', 
+            'pendingTasks', 'inProgressTask', 'completedTasks', 'totalSubjects', 'taskProgress', 
             'nextClass', 'upcomingTasks', 'recentMaterials', 'today'
         ));
     }

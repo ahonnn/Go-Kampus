@@ -15,7 +15,6 @@ class TaskController extends Controller
      */
     public function index(Request $request)
     {
-        // $tasks = auth()->user()->tasks()->with('subject')->latest()->get();
 
         $userId = auth()->id();
 
@@ -60,7 +59,7 @@ class TaskController extends Controller
         ->orderBy('due_date', 'asc') 
         
         // PERBAIKAN 3: Gunakan Paginate agar halaman tidak berat
-        ->paginate(10)
+        ->paginate(5)
         ->withQueryString(); // Agar saat pindah halaman, filter tidak hilang
 
     return view('tasks.index', compact('tasks', 'subjects'));

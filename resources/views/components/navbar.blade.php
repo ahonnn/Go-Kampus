@@ -17,10 +17,9 @@
       </div>
 
       <div class="hidden lg:flex lg:gap-x-12">
-        <a href="#" class="font-medium hover:text-[#9a0002] hover:scale-105 transition duration-300 ease-in-out">Home</a>
-        <a href="#" class="font-medium hover:text-[#9a0002] hover:scale-105 transition duration-300 ease-in-out">About</a>
-        <a href="#" class="font-medium hover:text-[#9a0002] hover:scale-105 transition duration-300 ease-in-out">Features</a>
-        <a href="#" class="font-medium hover:text-[#9a0002] hover:scale-105 transition duration-300 ease-in-out">Sosial</a>
+        <a href="#home" class="font-medium hover:text-[#9a0002] hover:scale-105 transition duration-300 ease-in-out">Home</a>
+        <a href="#features" class="font-medium hover:text-[#9a0002] hover:scale-105 transition duration-300 ease-in-out">Features</a>
+        <a href="#sosial" class="font-medium hover:text-[#9a0002] hover:scale-105 transition duration-300 ease-in-out">Sosial</a>
       </div>
 
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
